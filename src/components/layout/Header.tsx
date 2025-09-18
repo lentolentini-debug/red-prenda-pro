@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import redPrendariaLogo from "@/assets/red-prendaria-logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,13 +21,12 @@ const Header = () => {
       <div className="container-padding">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">RP</span>
-            </div>
-            <span className="font-heading font-bold text-xl text-foreground">
-              RED PRENDARIA
-            </span>
+          <Link to="/" className="flex items-center">
+            <img 
+              src={redPrendariaLogo} 
+              alt="RED PRENDARIA - Préstamos Prendarios para Agencias" 
+              className="h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
