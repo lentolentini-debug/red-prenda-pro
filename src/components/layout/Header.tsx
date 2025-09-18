@@ -27,7 +27,7 @@ const Header = () => {
               alt="RED PRENDARIA - Préstamos Prendarios para Agencias" 
               className="h-12 w-auto"
             />
-            <span className="font-heading font-bold text-xl text-foreground">
+            <span className="font-heading font-bold text-xl text-primary">
               RED PRENDARIA
             </span>
           </Link>
