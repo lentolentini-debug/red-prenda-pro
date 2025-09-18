@@ -21,12 +21,15 @@ const Header = () => {
       <div className="container-padding">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center space-x-3">
             <img 
               src={redPrendariaLogo} 
               alt="RED PRENDARIA - Préstamos Prendarios para Agencias" 
               className="h-12 w-auto"
             />
+            <span className="font-heading font-bold text-xl text-foreground">
+              RED PRENDARIA
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
