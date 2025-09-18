@@ -1,12 +1,34 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect } from "react";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import Hero from "@/components/sections/Hero";
+import Process from "@/components/sections/Process";
+import Benefits from "@/components/sections/Benefits";
+import InfoWidgets from "@/components/sections/InfoWidgets";
+import ContactQuick from "@/components/sections/ContactQuick";
+import FAQs from "@/components/sections/FAQs";
 
 const Index = () => {
+  useEffect(() => {
+    document.title = "RED PRENDARIA - Préstamos Prendarios para Agencias | Proceso Digital y Ágil";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Somos el nexo entre ICBC, Car First y tu agencia para préstamos prendarios. Proceso digital, rápido y sin errores. ¡Operá con las mejores condiciones!');
+    }
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main>
+        <Hero />
+        <Process />
+        <Benefits />
+        <InfoWidgets />
+        <ContactQuick />
+        <FAQs />
+      </main>
+      <Footer />
     </div>
   );
 };
