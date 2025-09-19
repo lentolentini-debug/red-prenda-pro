@@ -25,7 +25,15 @@ const Header = () => {
             <img 
               src={newLogo} 
               alt="Red Prendaria" 
-              className="h-[120px] w-auto bg-background mix-blend-multiply"
+              className="h-[120px] w-auto p-2"
+              style={{
+                backgroundColor: '#F6F8F9',
+                borderRadius: '0',
+                boxShadow: 'none',
+                border: 'none',
+                objectFit: 'contain',
+                padding: '8%'
+              }}
             />
           </Link>
 
