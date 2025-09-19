@@ -1,12 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import logoTransparent from "@/assets/logo-transparent.png";
+import { processLogoImage } from "@/utils/processLogo";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [logoSrc, setLogoSrc] = useState("");
   const location = useLocation();
+
+  useEffect(() => {
+    const loadLogo = async () => {
+      try {
+        const processedLogo = await processLogoImage();
+        setLogoSrc(processedLogo);
+      } catch (error) {
+        console.error('Failed to load processed logo:', error);
+        setLogoSrc("/src/assets/logoredpfinal2.png");
+      }
+    };
+    loadLogo();
+  }, []);
 
   const navigation = [
     { name: "Inicio", href: "/" },
@@ -22,12 +36,14 @@ const Header = () => {
         <div className="flex items-center justify-between h-32">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img 
-              src={logoTransparent} 
-              alt="Red Prendaria" 
-              className="h-[120px] w-auto"
-              style={{ background: 'transparent' }}
-            />
+            {logoSrc && (
+              <img 
+                src={logoSrc} 
+                alt="Red Prendaria" 
+                className="h-[120px] w-auto"
+                style={{ background: 'transparent' }}
+              />
+            )}
           </Link>
 
           {/* Desktop Navigation */}
