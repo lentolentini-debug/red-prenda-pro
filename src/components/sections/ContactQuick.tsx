@@ -7,13 +7,25 @@ const ContactQuick = () => {
   };
 
   const handleWhatsAppClick = () => {
-    // Official WhatsApp format that works across all devices and browsers
-    const phoneNumber = "5491128655231"; // Argentina format without + 
+    const phoneNumber = "5491128655231";
     const message = "Hola! Me interesa obtener información sobre préstamos prendarios con RED PRENDARIA.";
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     
-    // Try to open WhatsApp app first, fallback to web
-    window.open(whatsappUrl, "_blank");
+    // Check if we're in development/preview environment
+    const isPreview = window.location.hostname.includes('lovableproject.com') || 
+                     window.location.hostname.includes('localhost');
+    
+    if (isPreview) {
+      // In preview, show phone number and copy to clipboard
+      navigator.clipboard.writeText(`+54 9 11 2865 5231`).then(() => {
+        alert(`Número copiado: +54 9 11 2865 5231\n\nEn producción se abrirá WhatsApp automáticamente.`);
+      }).catch(() => {
+        alert(`WhatsApp: +54 9 11 2865 5231\n\nEn producción se abrirá WhatsApp automáticamente.`);
+      });
+    } else {
+      // In production, open WhatsApp normally
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, "_blank");
+    }
   };
 
   return (
