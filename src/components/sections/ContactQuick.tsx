@@ -7,10 +7,13 @@ const ContactQuick = () => {
   };
 
   const handleWhatsAppClick = () => {
-    // Use direct WhatsApp URL format that works better across browsers
+    // Official WhatsApp format that works across all devices and browsers
+    const phoneNumber = "5491128655231"; // Argentina format without + 
     const message = "Hola! Me interesa obtener información sobre préstamos prendarios con RED PRENDARIA.";
-    const whatsappUrl = `https://wa.me/5491128655231?text=${encodeURIComponent(message)}`;
-    window.location.href = whatsappUrl;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    
+    // Try to open WhatsApp app first, fallback to web
+    window.open(whatsappUrl, "_blank");
   };
 
   return (
