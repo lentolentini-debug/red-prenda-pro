@@ -1,9 +1,9 @@
 import { removeBackground, loadImage } from './backgroundRemoval';
 
-export const processLogoImage = async (): Promise<string> => {
+export const processLogoBackground = async (imagePath: string): Promise<string> => {
   try {
-    // Load the original logo image
-    const response = await fetch('/src/assets/logoredpfinal2.png');
+    // Load the image
+    const response = await fetch(imagePath);
     const imageBlob = await response.blob();
     
     // Load image element from blob
@@ -20,8 +20,8 @@ export const processLogoImage = async (): Promise<string> => {
       reader.readAsDataURL(processedBlob);
     });
   } catch (error) {
-    console.error('Error processing logo:', error);
+    console.error('Error processing logo background:', error);
     // Fallback to original image
-    return '/src/assets/logoredpfinal2.png';
+    return imagePath;
   }
 };
