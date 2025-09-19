@@ -21,7 +21,7 @@ const Hero = () => {
           {/* Main Heading */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6 animate-fade-in-up">
             Préstamos prendarios para tus clientes{" "}
-            <span className="text-gradient">a la mejor tasa</span>,{" "}
+            <span>a la mejor tasa</span>,{" "}
             de forma digital, ágil y simple
           </h1>
 
