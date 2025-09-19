@@ -1,27 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import redPrendariaLogo from "@/assets/red-prendaria-logo-new.png";
-import { processLogoBackground } from "@/utils/processLogo";
+import redPrendariaLogo from "@/assets/red-prendaria-logo-latest.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [processedLogo, setProcessedLogo] = useState<string>(redPrendariaLogo);
   const location = useLocation();
-
-  useEffect(() => {
-    const processLogo = async () => {
-      try {
-        const logoWithoutBackground = await processLogoBackground(redPrendariaLogo);
-        setProcessedLogo(logoWithoutBackground);
-      } catch (error) {
-        console.error('Failed to process logo:', error);
-        setProcessedLogo(redPrendariaLogo);
-      }
-    };
-    processLogo();
-  }, []);
 
   const navigation = [
     { name: "Inicio", href: "/" },
@@ -38,7 +23,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
-              src={processedLogo} 
+              src={redPrendariaLogo} 
               alt="Red Prendaria" 
               className="h-[160px] w-auto"
               style={{
