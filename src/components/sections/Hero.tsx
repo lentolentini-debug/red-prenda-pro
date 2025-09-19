@@ -20,15 +20,12 @@ const Hero = () => {
         <div className="max-w-5xl mx-auto text-center">
           {/* Main Heading */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6 animate-fade-in-up">
-            Préstamos prendarios para tus clientes{" "}
-            <span>a la mejor tasa</span>,{" "}
-            de forma digital, ágil y simple
+            Préstamos prendarios
           </h1>
 
           {/* Subheading */}
           <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-8 max-w-4xl mx-auto animate-fade-in-up">
-            Somos el nexo entre ICBC, Car First y tu agencia: te acompañamos en cada etapa 
-            para que la operación salga bien, rápido y sin errores.
+            La mejor tasa, de forma digital, ágil y simple para tus clientes
           </p>
 
           {/* Feature Pills */}
