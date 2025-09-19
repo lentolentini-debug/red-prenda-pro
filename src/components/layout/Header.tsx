@@ -25,7 +25,7 @@ const Header = () => {
             <img 
               src={redPrendariaLogo} 
               alt="Red Prendaria" 
-              className="h-[160px] w-auto"
+              className="h-[120px] w-auto"
               style={{
                 objectFit: 'contain'
               }}
