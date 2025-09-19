@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import redPrendariaLogo from "@/assets/red-prendaria-logo.png";
+import logoredpfinal2 from "@/assets/logoredpfinal2.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,7 +23,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             <img 
-              src={redPrendariaLogo} 
+              src={logoredpfinal2} 
               alt="RED PRENDARIA - Préstamos Prendarios para Agencias" 
               className="h-40 w-auto"
             />
