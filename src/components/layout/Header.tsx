@@ -19,13 +19,13 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container-padding">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             <img 
               src={redPrendariaLogo} 
               alt="RED PRENDARIA - Préstamos Prendarios para Agencias" 
-              className="h-16 w-auto"
+              className="h-20 w-auto"
             />
             <span className="font-heading font-bold text-xl text-primary">
               RED PRENDARIA
