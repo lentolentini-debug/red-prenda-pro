@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import logoredpfinal2 from "@/assets/logoredpfinal2.png";
+import logoTransparent from "@/assets/logo-transparent.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,15 +21,12 @@ const Header = () => {
       <div className="container-padding">
         <div className="flex items-center justify-between h-32">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center">
             <img 
-              src={logoredpfinal2} 
+              src={logoTransparent} 
               alt="RED PRENDARIA - Préstamos Prendarios para Agencias" 
               className="h-40 w-auto"
             />
-            <span className="font-heading font-bold text-xl text-primary">
-              RED PRENDARIA
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
