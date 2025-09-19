@@ -7,7 +7,7 @@ const InfoWidgets = () => {
     {
       icon: Clock,
       title: "Aprobación inmediata",
-      description: "Conocé el flujo para la aprobación inmediata y cómo optimizar los tiempos de respuesta para tus clientes.",
+      description: "Familiarizate con el flujo para la aprobación inmediata y cómo optimizar los tiempos de respuesta para tus clientes.",
       cta: "Leer cómo funciona",
       link: "/manual#aprobacion-inmediata",
       gradient: "from-primary/10 to-primary/5"
