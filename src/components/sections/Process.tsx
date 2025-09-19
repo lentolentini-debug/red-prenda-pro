@@ -17,7 +17,7 @@ const Process = () => {
     {
       icon: FileCheck,
       title: "Alta de cliente",
-      description: "Gestionamos el alta del cliente con todos los datos necesarios para el proceso."
+      description: "Gestiona el alta del cliente con todos los datos necesarios para el proceso."
     },
     {
       icon: Search,
