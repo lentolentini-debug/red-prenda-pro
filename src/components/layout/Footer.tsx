@@ -1,15 +1,8 @@
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Instagram } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  const socialLinks = [
-    { name: "Facebook", icon: Facebook, href: "#" },
-    { name: "Instagram", icon: Instagram, href: "#" },
-    { name: "LinkedIn", icon: Linkedin, href: "#" },
-    { name: "Twitter", icon: Twitter, href: "#" },
-  ];
 
   const legalLinks = [
     { name: "Política de Privacidad", href: "#" },
@@ -76,20 +69,14 @@ const Footer = () => {
               <h3 className="font-heading font-semibold text-foreground mb-4">
                 Seguinos
               </h3>
-              <div className="flex space-x-3">
-                {socialLinks.map((social) => {
-                  const Icon = social.icon;
-                  return (
-                    <a
-                      key={social.name}
-                      href={social.href}
-                      className="w-9 h-9 bg-background border border-border rounded-lg flex items-center justify-center hover:bg-primary hover:border-primary hover:text-primary-foreground transition-all duration-200"
-                      aria-label={social.name}
-                    >
-                      <Icon className="h-4 w-4" />
-                    </a>
-                  );
-                })}
+               <div className="flex space-x-3">
+                <a
+                  href="#"
+                  className="w-9 h-9 bg-background border border-border rounded-lg flex items-center justify-center hover:bg-primary hover:border-primary hover:text-primary-foreground transition-all duration-200"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="h-4 w-4" />
+                </a>
               </div>
             </div>
           </div>
