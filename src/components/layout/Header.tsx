@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import newLogo from "@/assets/logofinalredp-2.png";
+import redPrendariaLogo from "@/assets/red-prendaria-logo-new.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,16 +23,11 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
-              src={newLogo} 
+              src={redPrendariaLogo} 
               alt="Red Prendaria" 
-              className="h-[160px] w-auto p-2"
+              className="h-[160px] w-auto"
               style={{
-                backgroundColor: '#F6F8F9',
-                borderRadius: '0',
-                boxShadow: 'none',
-                border: 'none',
-                objectFit: 'contain',
-                padding: '8%'
+                objectFit: 'contain'
               }}
             />
           </Link>
