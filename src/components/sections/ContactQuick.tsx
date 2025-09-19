@@ -7,8 +7,10 @@ const ContactQuick = () => {
   };
 
   const handleWhatsAppClick = () => {
-    // Editable WhatsApp link
-    window.open("https://wa.me/5491128655231", "_blank");
+    // WhatsApp link with predefined message for better user experience
+    const message = encodeURIComponent("Hola! Me interesa obtener información sobre préstamos prendarios con RED PRENDARIA.");
+    const whatsappUrl = `https://wa.me/5491128655231?text=${message}`;
+    window.open(whatsappUrl, "_blank");
   };
 
   return (
