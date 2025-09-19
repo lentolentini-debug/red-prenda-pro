@@ -24,8 +24,9 @@ const Header = () => {
           <Link to="/" className="flex items-center">
             <img 
               src={logoTransparent} 
-              alt="RED PRENDARIA - Préstamos Prendarios para Agencias" 
-              className="h-40 w-auto"
+              alt="Red Prendaria" 
+              className="h-[120px] w-auto"
+              style={{ background: 'transparent' }}
             />
           </Link>
 
