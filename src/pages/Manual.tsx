@@ -3,20 +3,9 @@ import { Link } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { 
-  UserPlus, 
-  FileCheck, 
-  DollarSign, 
-  FileText, 
-  CheckCircle2, 
-  BarChart3,
-  ArrowRight,
-  BookOpen
-} from "lucide-react";
-
+import { UserPlus, FileCheck, DollarSign, FileText, CheckCircle2, BarChart3, ArrowRight, BookOpen } from "lucide-react";
 const Manual = () => {
   const [activeSection, setActiveSection] = useState<string>("");
-
   useEffect(() => {
     document.title = "Manual para Agencias - RED PRENDARIA | Guía Completa de Uso";
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -29,7 +18,9 @@ const Manual = () => {
     if (hash) {
       const element = document.getElementById(hash.substring(1));
       if (element) {
-        setTimeout(() => element.scrollIntoView({ behavior: 'smooth' }), 100);
+        setTimeout(() => element.scrollIntoView({
+          behavior: 'smooth'
+        }), 100);
       }
     }
 
@@ -38,69 +29,57 @@ const Manual = () => {
       rootMargin: '-20% 0px -70% 0px',
       threshold: 0.1
     };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
           setActiveSection(entry.target.id);
         }
       });
     }, observerOptions);
-
     const sections = document.querySelectorAll('section[id]');
-    sections.forEach((section) => observer.observe(section));
-
+    sections.forEach(section => observer.observe(section));
     return () => observer.disconnect();
   }, []);
-
-  const sections = [
-    {
-      id: "alta-car-first",
-      title: "Alta en Car First",
-      icon: UserPlus,
-      description: "Proceso de registro y configuración inicial en la plataforma"
-    },
-    {
-      id: "carga-validacion",
-      title: "Carga y validación de datos",
-      icon: FileCheck,
-      description: "Verificación y validación de información del cliente"
-    },
-    {
-      id: "generacion-oferta",
-      title: "Generación de oferta",
-      icon: DollarSign,
-      description: "Condiciones, montos y planes de cuotas personalizados"
-    },
-    {
-      id: "documentacion",
-      title: "Documentación requerida",
-      icon: FileText,
-      description: "DNI, comprobantes y documentos necesarios"
-    },
-    {
-      id: "aprobacion-inmediata",
-      title: "Aprobación inmediata",
-      icon: CheckCircle2,
-      description: "Flujo paso a paso para aprobaciones rápidas"
-    },
-    {
-      id: "seguimiento",
-      title: "Seguimiento del trámite",
-      icon: BarChart3,
-      description: "Etapas, estados y gestión de correcciones"
-    }
-  ];
-
+  const sections = [{
+    id: "alta-car-first",
+    title: "Alta en Car First",
+    icon: UserPlus,
+    description: "Proceso de registro y configuración inicial en la plataforma"
+  }, {
+    id: "carga-validacion",
+    title: "Carga y validación de datos",
+    icon: FileCheck,
+    description: "Verificación y validación de información del cliente"
+  }, {
+    id: "generacion-oferta",
+    title: "Generación de oferta",
+    icon: DollarSign,
+    description: "Condiciones, montos y planes de cuotas personalizados"
+  }, {
+    id: "documentacion",
+    title: "Documentación requerida",
+    icon: FileText,
+    description: "DNI, comprobantes y documentos necesarios"
+  }, {
+    id: "aprobacion-inmediata",
+    title: "Aprobación inmediata",
+    icon: CheckCircle2,
+    description: "Flujo paso a paso para aprobaciones rápidas"
+  }, {
+    id: "seguimiento",
+    title: "Seguimiento del trámite",
+    icon: BarChart3,
+    description: "Etapas, estados y gestión de correcciones"
+  }];
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Header />
       
       <main className="section-padding">
@@ -129,23 +108,13 @@ const Manual = () => {
                       Índice de contenidos
                     </h2>
                     <nav className="space-y-2">
-                      {sections.map((section) => {
-                        const Icon = section.icon;
-                        return (
-                          <button
-                            key={section.id}
-                            onClick={() => scrollToSection(section.id)}
-                            className={`w-full flex items-center space-x-3 p-3 rounded-lg text-left transition-all duration-200 ${
-                              activeSection === section.id
-                                ? "bg-primary text-primary-foreground shadow-md"
-                                : "hover:bg-background text-muted-foreground hover:text-foreground"
-                            }`}
-                          >
+                      {sections.map(section => {
+                      const Icon = section.icon;
+                      return <button key={section.id} onClick={() => scrollToSection(section.id)} className={`w-full flex items-center space-x-3 p-3 rounded-lg text-left transition-all duration-200 ${activeSection === section.id ? "bg-primary text-primary-foreground shadow-md" : "hover:bg-background text-muted-foreground hover:text-foreground"}`}>
                             <Icon className="h-4 w-4 flex-shrink-0" />
                             <span className="text-sm font-medium">{section.title}</span>
-                          </button>
-                        );
-                      })}
+                          </button>;
+                    })}
                     </nav>
                   </div>
                 </div>
@@ -155,9 +124,8 @@ const Manual = () => {
               <div className="lg:col-span-3">
                 <div className="space-y-16">
                   {sections.map((section, index) => {
-                    const Icon = section.icon;
-                    return (
-                      <section key={section.id} id={section.id} className="scroll-mt-24">
+                  const Icon = section.icon;
+                  return <section key={section.id} id={section.id} className="scroll-mt-24">
                         <div className="bg-background border border-border rounded-2xl p-8 shadow-soft">
                           {/* Section Header */}
                           <div className="flex items-center space-x-4 mb-6">
@@ -176,8 +144,7 @@ const Manual = () => {
 
                           {/* Section Content */}
                           <div className="prose prose-gray max-w-none">
-                            {section.id === "alta-car-first" && (
-                              <div className="space-y-4">
+                            {section.id === "alta-car-first" && <div className="space-y-4">
                                 <h3 className="text-lg font-semibold text-foreground">Pasos para el alta:</h3>
                                 <ul className="space-y-2 text-muted-foreground">
                                   <li>• Completar formulario de registro con datos de la agencia</li>
@@ -192,11 +159,9 @@ const Manual = () => {
                                     Te acompañamos en cada paso para asegurar una configuración exitosa.
                                   </p>
                                 </div>
-                              </div>
-                            )}
+                              </div>}
 
-                            {section.id === "carga-validacion" && (
-                              <div className="space-y-4">
+                            {section.id === "carga-validacion" && <div className="space-y-4">
                                 <h3 className="text-lg font-semibold text-foreground">Proceso de validación:</h3>
                                 <ul className="space-y-2 text-muted-foreground">
                                   <li>• Verificación de datos personales del cliente</li>
@@ -211,11 +176,9 @@ const Manual = () => {
                                     devoluciones. Revisá cada campo cuidadosamente.
                                   </p>
                                 </div>
-                              </div>
-                            )}
+                              </div>}
 
-                            {section.id === "generacion-oferta" && (
-                              <div className="space-y-4">
+                            {section.id === "generacion-oferta" && <div className="space-y-4">
                                 <h3 className="text-lg font-semibold text-foreground">Elementos de la oferta:</h3>
                                 <ul className="space-y-2 text-muted-foreground">
                                   <li>• Monto máximo financiable según valuación</li>
@@ -224,11 +187,9 @@ const Manual = () => {
                                   <li>• Plan de cuotas detallado</li>
                                   <li>• Costos asociados y seguros</li>
                                 </ul>
-                              </div>
-                            )}
+                              </div>}
 
-                            {section.id === "documentacion" && (
-                              <div className="space-y-4">
+                            {section.id === "documentacion" && <div className="space-y-4">
                                 <h3 className="text-lg font-semibold text-foreground">Documentos requeridos:</h3>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                   <div>
@@ -246,15 +207,13 @@ const Manual = () => {
                                     </ul>
                                   </div>
                                 </div>
-                              </div>
-                            )}
+                              </div>}
 
-                            {section.id === "aprobacion-inmediata" && (
-                              <div className="space-y-4">
+                            {section.id === "aprobacion-inmediata" && <div className="space-y-4">
                                 <h3 className="text-lg font-semibold text-foreground">Criterios para aprobación inmediata:</h3>
                                 <ul className="space-y-2 text-muted-foreground">
                                   <li>• Cliente con historial crediticio excelente</li>
-                                  <li>• Ingresos demostrables y estables</li>
+                                  <li>• Documentacion de comprobantes de ingreso ( solo de ser necesario)</li>
                                   <li>• Vehículo dentro de parámetros estándar</li>
                                   <li>• Documentación completa y correcta</li>
                                   <li>• Monto dentro de límites preestablecidos</li>
@@ -265,11 +224,9 @@ const Manual = () => {
                                     de las operaciones cuando se siguen correctamente estos criterios.
                                   </p>
                                 </div>
-                              </div>
-                            )}
+                              </div>}
 
-                            {section.id === "seguimiento" && (
-                              <div className="space-y-4">
+                            {section.id === "seguimiento" && <div className="space-y-4">
                                 <h3 className="text-lg font-semibold text-foreground">Estados del trámite:</h3>
                                 <div className="space-y-3">
                                   <div className="flex items-center space-x-3 p-3 bg-blue-50 rounded-lg">
@@ -289,13 +246,11 @@ const Manual = () => {
                                     <span className="text-sm font-medium text-red-700">Rechazado</span>
                                   </div>
                                 </div>
-                              </div>
-                            )}
+                              </div>}
                           </div>
                         </div>
-                      </section>
-                    );
-                  })}
+                      </section>;
+                })}
                 </div>
 
                 {/* Contact CTA */}
@@ -321,8 +276,6 @@ const Manual = () => {
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Manual;
