@@ -235,7 +235,6 @@ const Manual = () => {
                                     <h4 className="font-medium text-foreground mb-2">Del cliente:</h4>
                                     <ul className="space-y-1 text-sm text-muted-foreground">
                                       <li>• DNI (frente y dorso)</li>
-                                      <li>• Recibos de sueldo (últimos 3)</li>
                                       <li>• Constancia de CUIL/CUIT</li>
                                       <li>• Comprobante de domicilio</li>
                                     </ul>
@@ -244,9 +243,6 @@ const Manual = () => {
                                     <h4 className="font-medium text-foreground mb-2">Del vehículo:</h4>
                                     <ul className="space-y-1 text-sm text-muted-foreground">
                                       <li>• Título de propiedad</li>
-                                      <li>• Cédula verde</li>
-                                      <li>• Verificación policial</li>
-                                      <li>• Seguro vigente</li>
                                     </ul>
                                   </div>
                                 </div>
